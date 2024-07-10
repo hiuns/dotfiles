@@ -1,2 +1,3 @@
-alias vim="nvim"
-alias vimk='NVIM_APPNAME="nvim-kickstart" nvim'
+alias v='NVIM_APPNAME="nvim" nvim'
+alias vim='NVIM_APPNAME="nvim-kickstart" nvim'
+
