@@ -4,8 +4,8 @@ brew install font-meslo-lg-nerd-font
 
 mkdir -p ~/.config/nvim
 
-ln -s ~/dotfiles/vimrc ~/.vimrc\
-ln -s ~/dotfiles/zshrc ~/.zshrc\
-ln -s ~/dotfiles/nvim ~/.config/nvim\
-ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
+ln -s ~/[directory]/vimrc ~/.vimrc\
+ln -s ~/[directory]/zshrc ~/.zshrc\
+ln -s ~/[directory]/nvim ~/.config/nvim\
+ln -s ~/[directory]/tmux.conf ~/.tmux.conf
 
