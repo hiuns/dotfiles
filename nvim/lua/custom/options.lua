@@ -20,8 +20,8 @@ vim.opt.incsearch = true
 vim.opt.inccommand = 'split'
 
 vim.opt.termguicolors = true
-vim.opt.guicursor = ''
-vim.opt.showmode = false
+vim.opt.mouse = ''
+vim.opt.showmode = true
 
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = 'yes'

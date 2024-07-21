@@ -1,4 +1,4 @@
 require("custom.options")
 require("custom.keymaps")
-require("custom.lazy")
+require("custom.lazy_init")
 require("custom.autocmds")
