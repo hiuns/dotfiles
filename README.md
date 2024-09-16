@@ -1,5 +1,7 @@
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
 brew install neovim\
-brew tab homebrew/cask-fonts\
+brew install --cask font-monaspace\
 brew install font-meslo-lg-nerd-font
 
 mkdir -p ~/.config/nvim
