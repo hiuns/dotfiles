@@ -15,6 +15,7 @@ vim.opt.undodir = os.getenv 'HOME' .. '/.vim/.undodir//'
 -- vim.opt.backupdir = os.getenv("HOME") .. "/.vim/.backup//"
 -- vim.opt.directory = os.getenv("HOME") .. "/.vim/.swp//"
 
+vim.opt.ignorecase = true
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.inccommand = 'split'
