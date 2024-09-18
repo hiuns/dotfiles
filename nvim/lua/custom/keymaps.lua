@@ -84,3 +84,9 @@ end)
 vim.keymap.set('v', '<Right>', function()
   print 'Use l'
 end)
+
+-- competitive programming
+vim.keymap.set('i', '{', '{}<Left>')
+vim.keymap.set('i', '{<CR>', '{<CR>}<Esc>O')
+vim.keymap.set('i', '{{', '{')
+vim.keymap.set('i', '{}', '{}')
