@@ -166,7 +166,11 @@ return {
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
-        -- tsserver = {},
+        -- LEARNING: tsserver was renamed to ts_ls in Mason
+        -- LEARNING: no need for config here since conform prettier edits
+        -- ts_ls = {
+        --   filetypes = { 'javascript', 'typescript', 'typescriptreact' },
+        -- },
         --
 
         lua_ls = {
@@ -198,6 +202,8 @@ return {
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
+        -- LEARNING: Mason will auto install so no need for others here
+        -- 'typescript-language-server',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
