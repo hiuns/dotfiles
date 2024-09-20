@@ -30,10 +30,12 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 
 vim.keymap.set({ 'i', 'x', 'n', 's' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save File' })
 
+-- yank the whole file
+vim.keymap.set({ 'n', 'v' }, '<leader>ya', '<cmd>%y+<CR>')
 -- when pasting over a text, keeps previously copied text in buffer
 -- vim.keymap.set("x", "<leader>p", [["_dP]])
 -- copies to system clipboard and separates it from yanked text in vim
--- vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+-- vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]])
 -- vim.keymap.set("n", "<leader>Y", [["+Y]])
 -- delete without putting into register
 -- vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
@@ -86,7 +88,8 @@ vim.keymap.set('v', '<Right>', function()
 end)
 
 -- competitive programming
-vim.keymap.set('i', '{', '{}<Left>')
-vim.keymap.set('i', '{<CR>', '{<CR>}<Esc>O')
-vim.keymap.set('i', '{{', '{')
-vim.keymap.set('i', '{}', '{}')
+-- vim.keymap.set('i', '{', '{}<Left>')
+-- vim.keymap.set('i', '{<CR>', '{<CR>}<Esc>O')
+-- vim.keymap.set('i', '(<CR>', '(<CR>)<Esc>O')
+-- vim.keymap.set('i', '{{', '{')
+-- vim.keymap.set('i', '{}', '{}')

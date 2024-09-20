@@ -33,9 +33,9 @@ return {
         -- is found.
         javascript = { 'prettierd', 'prettier' },
         typescript = { 'prettierd', 'prettier' },
-        typescriptreact = { 'prettierd', 'prettier' },
+        typescriptreact = { 'prettierd', 'prettier', 'rustywind' },
+        -- tailwindcss = { 'rustywind' },
       },
     },
   },
 }
--- vim: ts=2 sts=2 sw=2 et
