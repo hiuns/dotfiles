@@ -5,8 +5,8 @@ alias gs="git status"
 alias gb="git branch"
 alias gp="git pull"
 alias ga="git add ."
+alias gd="git diff"
 
-alias proj="cd Developer/prompt.io"
 #source /usr/local/opt/chruby/share/chruby/chruby.sh
 #source /usr/local/opt/chruby/share/chruby/auto.sh
 #chruby ruby-3.1.3
@@ -27,10 +27,13 @@ function parse_git_branch() {
     git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/[\1] /p'
 }
 COLOR_DEF=$'%f'
-COLOR_USR=$'%F{243}'
+# COLOR_USR=$'%F{243}'
 COLOR_DIR=$'%F{197}'
 COLOR_GIT=$'%F{39}'
 setopt PROMPT_SUBST
-export PROMPT='${COLOR_USR}%n ${COLOR_DIR}%2~ ${COLOR_GIT}$(parse_git_branch)${COLOR_DEF}$ '
+# export PROMPT='${COLOR_USR}%n ${COLOR_DIR}%2~ ${COLOR_GIT}$(parse_git_branch)${COLOR_DEF}$ '
+export PROMPT='${COLOR_DIR}%2~ ${COLOR_GIT}$(parse_git_branch)${COLOR_DEF}$ '
 ####### zsh display #######
 
+# go to project right away
+cd ~/Developer && ls
