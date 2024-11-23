@@ -20,7 +20,7 @@ return {
         -- languages here or re-enable it for the disabled ones.
         local disable_filetypes = { c = true, cpp = true }
         return {
-          timeout_ms = 1000,
+          timeout_ms = 500,
           lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
         }
       end,
@@ -35,6 +35,7 @@ return {
         javascriptreact = { 'prettierd', 'prettier', 'rustywind' },
         typescript = { 'prettierd', 'prettier' },
         typescriptreact = { 'prettierd', 'prettier', 'rustywind' },
+        json = { 'prettier' },
         python = { 'isort', 'black' },
       },
       formatters = {
