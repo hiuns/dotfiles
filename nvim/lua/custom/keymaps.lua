@@ -39,11 +39,11 @@ vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]])
 vim.keymap.set('n', '<leader>Y', [["+Y]])
 -- delete without putting into register
 vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]])
-vim.keymap.set({ 'n', 'v' }, '<leader>dd', [["_dd]])
+vim.keymap.set({ 'n' }, '<leader>dd', [["_dd]])
 -- start replacing the word under cursor
 vim.keymap.set('n', '<leader>r', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 -- make current file executable
--- vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+vim.keymap.set('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true })
 
 -- vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 -- vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
@@ -90,7 +90,7 @@ end)
 
 -- competitive programming
 -- vim.keymap.set('i', '{', '{}<Left>')
--- vim.keymap.set('i', '{<CR>', '{<CR>}<Esc>O')
--- vim.keymap.set('i', '(<CR>', '(<CR>)<Esc>O')
+vim.keymap.set('i', '{<CR>', '{<CR>}<Esc>O')
+vim.keymap.set('i', '(<CR>', '(<CR>)<Esc>O')
 -- vim.keymap.set('i', '{{', '{')
 -- vim.keymap.set('i', '{}', '{}')
