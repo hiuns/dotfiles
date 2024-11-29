@@ -30,8 +30,6 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 
 vim.keymap.set({ 'i', 'x', 'n', 's' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save File' })
 
--- yank the whole file
-vim.keymap.set({ 'n', 'v' }, '<leader>ya', '<cmd>%y+<CR>')
 -- when pasting over a text, keeps previously copied text in buffer
 vim.keymap.set('x', '<leader>p', [["_dP]])
 -- yank to clipboard
