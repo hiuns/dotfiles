@@ -10,8 +10,9 @@ rm -rf ~/.local/share/nvim\
 rm -rf ~/.local/state/nvim\
 rm -rf ~/.cachel/nvim
 
-ln -s ~/[directory]/vimrc ~/.vimrc\
-ln -s ~/[directory]/zshrc ~/.zshrc\
-ln -s ~/[directory]/nvim ~/.config/nvim\
-ln -s ~/[directory]/tmux.conf ~/.tmux.conf
+ln -s [directory]/vimrc ~/.vimrc\
+ln -s [directory]/zshrc ~/.zshrc\
+ln -s [directory]/nvim ~/.config/nvim\
+ln -s [directory]/tmux.conf ~/.tmux.conf\
+ln -s [directory]/scripts/tmux-sessionizer.sh ~/.local/bin/tmux-sessionizer
 
