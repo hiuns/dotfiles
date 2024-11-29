@@ -9,23 +9,27 @@ COLOR_GIT=$'%F{39}'
 setopt PROMPT_SUBST
 # export PROMPT='${COLOR_USR}%n ${COLOR_DIR}%2~ ${COLOR_GIT}$(parse_git_branch)${COLOR_DEF}$ '
 export PROMPT='${COLOR_DIR}%2~ ${COLOR_GIT}$(parse_git_branch)${COLOR_DEF}$ '
-
-# go to project right away
-cd ~/Developer && ls
 ####################################################
 
 ####### alias ######################################
+alias cdd="cd ~/Developer && ls"
+alias dc="cd"
+alias sl="ls"
 alias v="nvim"
+alias vi="nvim"
 alias vim="nvim"
-
 alias gs="git status"
 alias gb="git branch"
 alias gp="git pull"
-alias ga="git add ."
 alias gd="git diff"
-####################################################
-
-####### mkdir && cd ################################
+alias gam="git add . && git commit --amend"
+function gac {
+  if [ $# -eq 0 ]; then
+    echo "Enter a commit message"
+  else
+    git commit -a -m "$*"
+  fi
+}
 function mkcd {
   if [ ! -n "$1" ]; then
     echo "Enter a directory name"
