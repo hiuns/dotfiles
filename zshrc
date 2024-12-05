@@ -43,6 +43,13 @@ function gac {
     git commit -a -m "$*"
   fi
 }
+function gcp {
+  if [ $# -eq 0 ]; then
+    echo "Enter a commit message"
+  else
+    git add . && git commit -m "$*" && git push
+  fi
+}
 function mkcd {
   if [ ! -n "$1" ]; then
     echo "Enter a directory name"
@@ -55,7 +62,15 @@ function mkcd {
 ####################################################
 
 ######## python venv setup #########################
-setup_python_venv() {
+alias p="python3"
+run_venv() {
+    if [ ! -d ".venv" ]; then
+        echo "Venv doesn't exist"
+    else
+        source .venv/bin/activate
+    fi
+}
+build_venv() {
     # Create a virtual environment if it doesn't already exist
     if [ ! -d ".venv" ]; then
         python3 -m venv .venv

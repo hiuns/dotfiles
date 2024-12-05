@@ -52,6 +52,10 @@ vim.keymap.set('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true })
 -- vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 -- vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
+vim.api.nvim_create_user_command('Clear', function()
+  vim.api.nvim_buf_set_lines(0, 0, -1, false, {})
+end, { desc = 'Clear all lines in the current buffer' })
+
 -- force vim commands
 vim.keymap.set('n', '<Left>', function()
   print 'Use h'
