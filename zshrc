@@ -36,6 +36,7 @@ alias gs="git status"
 alias gb="git branch"
 alias gp="git pull"
 alias gd="git diff"
+alias gms="git merge --squash"
 alias gam="git add . && git commit --amend"
 function gac {
   if [ $# -eq 0 ]; then
