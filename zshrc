@@ -93,7 +93,6 @@ build_venv() {
     fi
 
     # Inform the user about activation and deactivation
-    echo "To activate the virtual environment, run: source .venv/bin/activate"
     echo "To deactivate, simply run: deactivate"
 }
 ####################################################
