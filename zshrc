@@ -10,8 +10,6 @@ function appendLeftPath {
     fi
 }
 appendLeftPath $HOME/.local/bin
-####################################################
-
 ####### zsh display: user directory branch $ #######
 function parse_git_branch() {
     git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/[\1] /p'
@@ -21,37 +19,12 @@ COLOR_DIR=$'%F{197}'
 COLOR_GIT=$'%F{39}'
 setopt PROMPT_SUBST
 export PROMPT='${COLOR_DIR}%2~ ${COLOR_GIT}$(parse_git_branch)${COLOR_DEF}$ '
-####################################################
-
 ####### alias ######################################
-alias cdd="cd ~/Developer && ls"
 alias dc="cd"
 alias sl="ls"
 alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
-alias tks="tmux kill-session"
-alias tkas="tmux kill-server"
-alias gs="git status"
-alias gb="git branch"
-alias gp="git pull"
-alias gd="git diff"
-alias gms="git merge --squash"
-alias gam="git add . && git commit --amend"
-function gac {
-  if [ $# -eq 0 ]; then
-    echo "Enter a commit message"
-  else
-    git commit -a -m "$*"
-  fi
-}
-function gcp {
-  if [ $# -eq 0 ]; then
-    echo "Enter a commit message"
-  else
-    git add . && git commit -m "$*" && git push
-  fi
-}
 function mkcd {
   if [ ! -n "$1" ]; then
     echo "Enter a directory name"
@@ -61,10 +34,28 @@ function mkcd {
     mkdir $1 && cd $1
   fi
 }
-####################################################
-
+# tmux
+alias tks="tmux kill-session"
+alias tkas="tmux kill-server"
+# git
+alias gs="git status"
+alias gb="git branch"
+alias gl="git log"
+alias gd="git diff"
+alias gp="git push"
+alias gpu="git pull"
+alias gck="git checkout"
+alias ga="git add -p"
+alias gam="git add . && git commit --amend"
+alias gc="git commit"
+function gcm {
+  if [ $# -eq 0 ]; then
+    echo "Enter a commit message"
+  else
+    git commit -m "$*"
+  fi
+}
 ######## python venv setup #########################
-alias p="python3"
 run_venv() {
     if [ ! -d ".venv" ]; then
         echo "Venv doesn't exist"

@@ -1,0 +1,9 @@
+custom/plugins/
+├── cmp.lua          # Autocompletion (e.g., nvim-cmp)
+├── colors.lua       # Color schemes or highlights
+├── conform.lua      # Formatting tools (e.g., Conform.nvim)
+├── harpoon.lua      # Harpoon plugin setup
+├── lsp.lua          # Language Server Protocol configuration
+├── telescope.lua    # Telescope configuration
+├── treesitter.lua   # Treesitter configuration
+

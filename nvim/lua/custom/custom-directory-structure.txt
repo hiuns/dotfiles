@@ -1,0 +1,8 @@
+custom/
+├── plugins/         # Contains plugin-specific configurations
+├── autocmds.lua     # Autocommand configurations
+├── init.lua         # Entry point for loading other configurations
+├── keymaps.lua      # Key mappings
+├── lazy_init.lua    # Lazy.nvim setup and initialization
+├── options.lua      # General editor options/settings
+
