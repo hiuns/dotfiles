@@ -1,15 +1,3 @@
-####### zsh settings ###############################
-function appendPath {
-    if [[ "$PATH" != *"$1"* ]]; then
-        export PATH=$PATH:$1
-    fi
-}
-function appendLeftPath {
-    if [[ "$PATH" != *"$1"* ]]; then
-        export PATH=$1:$PATH
-    fi
-}
-appendLeftPath $HOME/.local/bin
 ####### zsh display: user directory branch $ #######
 function parse_git_branch() {
     git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/[\1] /p'
@@ -22,8 +10,6 @@ export PROMPT='${COLOR_DIR}%2~ ${COLOR_GIT}$(parse_git_branch)${COLOR_DEF}$ '
 ####### alias ######################################
 alias dc="cd"
 alias sl="ls"
-alias v="nvim"
-alias vi="nvim"
 alias vim="nvim"
 function mkcd {
   if [ ! -n "$1" ]; then
@@ -35,6 +21,7 @@ function mkcd {
   fi
 }
 # tmux
+alias tls="tmux ls"
 alias tks="tmux kill-session"
 alias tkas="tmux kill-server"
 # git
@@ -86,5 +73,4 @@ build_venv() {
     # Inform the user about activation and deactivation
     echo "To deactivate, simply run: deactivate"
 }
-####################################################
 
