@@ -158,7 +158,17 @@ return {
       local servers = {
         -- clangd = {},
         -- gopls = {},
-        -- pyright = {},
+        pyright = {
+          settings = {
+            python = {
+              analysis = {
+                typeCheckingMode = 'basic', -- Options: "off", "basic", "strict"
+                autoSearchPaths = true,
+                useLibraryCodeForTypes = true,
+              },
+            },
+          },
+        },
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -168,10 +178,10 @@ return {
         -- But for many setups, the LSP (`tsserver`) will work just fine
         -- LEARNING: tsserver was renamed to ts_ls in Mason
         -- LEARNING: no need for config here since conform prettier edits
-        -- ts_ls = {
-        --   filetypes = { 'javascript', 'typescript', 'typescriptreact' },
-        -- },
-        --
+        ts_ls = {
+          filetypes = { 'javascript', 'typescript', 'typescriptreact' },
+        },
+        tailwindcss = {}, -- Tailwind CSS LSP
 
         lua_ls = {
           -- cmd = {...},
@@ -203,11 +213,23 @@ return {
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
         -- LEARNING: Mason will auto install so no need for others here
-        -- 'typescript-language-server',
+        'black', -- Python formatter
+        'isort', -- Python import sorter
+        'prettierd', -- Prettier for JS/TS/CSS/HTML
+        'rustywind', -- Tailwind CSS class sorter
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
       require('mason-lspconfig').setup {
+        ensure_installed = { -- List the LSPs you want Mason to ensure are installed
+          'pyright', -- Python
+          'ts_ls', -- TypeScript/JavaScript
+          'jsonls', -- JSON
+          'cssls', -- CSS
+          'html', -- HTML
+          'lua_ls', -- Lua
+        },
+        automatic_installation = true,
         handlers = {
           function(server_name)
             local server = servers[server_name] or {}
