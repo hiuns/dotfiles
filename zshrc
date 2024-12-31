@@ -1,15 +1,15 @@
 # Resolve the real directory of the .zshrc file, even if it's a symlink
 ZSHRC_DIR="$(cd "$(dirname "$(realpath "${(%):-%N}")")" && pwd)"
-SCRIPTS_DIR="$ZSHRC_DIR/scripts"
+SHELL_DIR="$ZSHRC_DIR/shell"
 
 # Debug: Print the resolved paths for clarity
 # echo "Resolved .zshrc directory: $ZSHRC_DIR"
-# echo "Expected scripts directory: $SCRIPTS_DIR"
+# echo "Expected shell directory: $SHELL_DIR"
 
-# Check if the scripts directory exists and is accessible
-if [ -d "$SCRIPTS_DIR" ]; then
-  # echo "Loading scripts from: $SCRIPTS_DIR"
-  for script in "$SCRIPTS_DIR"/*.sh; do
+# Check if the shell directory exists and is accessible
+if [ -d "$SHELL_DIR" ]; then
+  # echo "Loading shell from: $SHELL_DIR"
+  for script in "$SHELL_DIR"/*.sh; do
     if [ -r "$script" ]; then
       source "$script"
       # echo "Loaded: $script"
@@ -18,5 +18,5 @@ if [ -d "$SCRIPTS_DIR" ]; then
     fi
   done
 else
-  echo "Error: Directory '$SCRIPTS_DIR' does not exist."
+  echo "Error: Directory '$SHELL_DIR' does not exist."
 fi
