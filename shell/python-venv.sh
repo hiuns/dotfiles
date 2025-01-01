@@ -16,7 +16,7 @@ run_venv() {
 # Build or activate a virtual environment
 build_venv() {
   local python_cmd="python3" # Default to python3 (macOS)
-  if command -v python &>/dev/null; then
+  if [ -f ".python-version" ]; then
     python_cmd="python"
   fi
 
