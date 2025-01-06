@@ -21,11 +21,11 @@ alias gam="git add . && git commit --amend"
 alias gc="git commit"
 
 # Git commit with a message
-function gcm {
+function gacm {
   if [ $# -eq 0 ]; then
     echo "Enter a commit message"
   else
-    git commit -m "$*"
+    git add . && git commit -m "$*"
   fi
 }
 
