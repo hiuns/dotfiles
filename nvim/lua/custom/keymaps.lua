@@ -57,40 +57,16 @@ vim.api.nvim_create_user_command('Clear', function()
 end, { desc = 'Clear all lines in the current buffer' })
 
 -- force vim commands
-vim.keymap.set('n', '<Left>', function()
+vim.keymap.set({ 'i', 'n', 'v' }, '<Left>', function()
   print 'Use h'
 end)
-vim.keymap.set('n', '<Down>', function()
+vim.keymap.set({ 'i', 'n', 'v' }, '<Down>', function()
   print 'Use j'
 end)
-vim.keymap.set('n', '<Up>', function()
+vim.keymap.set({ 'i', 'n', 'v' }, '<Up>', function()
   print 'Use k'
 end)
-vim.keymap.set('n', '<Right>', function()
-  print 'Use l'
-end)
-vim.keymap.set('i', '<Left>', function()
-  print 'Use h'
-end)
-vim.keymap.set('i', '<Down>', function()
-  print 'Use j'
-end)
-vim.keymap.set('i', '<Up>', function()
-  print 'Use k'
-end)
-vim.keymap.set('i', '<Right>', function()
-  print 'Use l'
-end)
-vim.keymap.set('v', '<Left>', function()
-  print 'Use h'
-end)
-vim.keymap.set('v', '<Down>', function()
-  print 'Use j'
-end)
-vim.keymap.set('v', '<Up>', function()
-  print 'Use k'
-end)
-vim.keymap.set('v', '<Right>', function()
+vim.keymap.set({ 'i', 'n', 'v' }, '<Right>', function()
   print 'Use l'
 end)
 
@@ -101,3 +77,4 @@ vim.keymap.set('i', '(<CR>', '(<CR>)<Esc>O')
 vim.keymap.set('i', '[<CR>', '[<CR>]<Esc>O')
 -- vim.keymap.set('i', '{{', '{')
 -- vim.keymap.set('i', '{}', '{}')
+vim.keymap.set('n', '<leader>cc', ':w <bar> :!gcc %:r.c -o %:r && ./%:r<CR>')
