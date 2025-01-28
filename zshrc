@@ -8,6 +8,9 @@ COLOR_GIT=$'%F{39}'
 setopt PROMPT_SUBST
 export PROMPT='${COLOR_DIR}%2~ ${COLOR_GIT}$(parse_git_branch)${COLOR_DEF}$ '
 
+# python
+alias svenv="source .venv/bin/activate"
+
 # Basic navigation
 alias dc="cd"
 alias sl="ls"
